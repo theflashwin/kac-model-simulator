@@ -36,7 +36,7 @@ void runSimulation(const QString &p1,
 
     // create our distributions
     std::uniform_int_distribution<int> position_dist(0, num_particles);
-    std::uniform_int_distribution<int> winner_dist(0, 1);
+    std::uniform_int_distribution<int> winner_dist(0, 1); // change to bitwise random
 
     // array to store state
     std::vector<int> state(num_particles, 1);
@@ -76,6 +76,7 @@ void runSimulation(const QString &p1,
             state[position_one] = 0;
         }
     }
+
 
     QString msg = QString("Simulation finished. Number of iterations: %1")
               .arg(num_iter);
